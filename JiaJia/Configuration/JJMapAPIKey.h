@@ -10,4 +10,11 @@
 #define JJMapAPIKey_h
 
 
+//高德地图API key
+
+const static NSString *APIKey = @"307a2394c0605c1c19732d2d999f16af";
+
+const static NSString *TableID = @"";
+
+
 #endif /* JJMapAPIKey_h */

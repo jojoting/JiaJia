@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25EE2D4F70DCF79F8A2CFDC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D022C8A3767389B7CA8251D /* libPods.a */; };
+		B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B901CB91BE2005582EA /* JJHomeViewController.m */; };
 		B9D4D5AA1CB651C400B7B90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5A91CB651C400B7B90D /* main.m */; };
 		B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5AC1CB651C400B7B90D /* AppDelegate.m */; };
-		B9D4D5B01CB651C400B7B90D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5AF1CB651C400B7B90D /* ViewController.m */; };
-		B9D4D5B31CB651C400B7B90D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D4D5B11CB651C400B7B90D /* Main.storyboard */; };
 		B9D4D5B51CB651C400B7B90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D4D5B41CB651C400B7B90D /* Assets.xcassets */; };
-		B9D4D5B81CB651C400B7B90D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D4D5B61CB651C400B7B90D /* LaunchScreen.storyboard */; };
 		B9D4D5C31CB651C400B7B90D /* JiaJiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5C21CB651C400B7B90D /* JiaJiaTests.m */; };
 		B9D4D5CE1CB651C400B7B90D /* JiaJiaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5CD1CB651C400B7B90D /* JiaJiaUITests.m */; };
+		B9D4D5E41CB69FE300B7B90D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B9D4D5E31CB69FE300B7B90D /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,15 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D022C8A3767389B7CA8251D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BBA2AB4D97922F8FE78E15E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B9511B8F1CB91BE2005582EA /* JJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJHomeViewController.h; sourceTree = "<group>"; };
+		B9511B901CB91BE2005582EA /* JJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJHomeViewController.m; sourceTree = "<group>"; };
 		B9D4D5A51CB651C400B7B90D /* JiaJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiaJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4D5A91CB651C400B7B90D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D4D5AB1CB651C400B7B90D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9D4D5AC1CB651C400B7B90D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B9D4D5AE1CB651C400B7B90D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B9D4D5AF1CB651C400B7B90D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B9D4D5B21CB651C400B7B90D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9D4D5B41CB651C400B7B90D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B9D4D5B71CB651C400B7B90D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D4D5B91CB651C400B7B90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9D4D5BE1CB651C400B7B90D /* JiaJiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JiaJiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4D5C21CB651C400B7B90D /* JiaJiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JiaJiaTests.m; sourceTree = "<group>"; };
@@ -51,6 +51,9 @@
 		B9D4D5C91CB651C400B7B90D /* JiaJiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JiaJiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4D5CD1CB651C400B7B90D /* JiaJiaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JiaJiaUITests.m; sourceTree = "<group>"; };
 		B9D4D5CF1CB651C400B7B90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9D4D5E31CB69FE300B7B90D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B9D4D5E61CB6A6AB00B7B90D /* JJMapAPIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJMapAPIKey.h; sourceTree = "<group>"; };
+		E063754B079967D4242C1E27 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25EE2D4F70DCF79F8A2CFDC1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +82,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5692E8D922A7BB96B58585BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BBA2AB4D97922F8FE78E15E /* Pods.debug.xcconfig */,
+				E063754B079967D4242C1E27 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B9511B8E1CB91BE2005582EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9511B8F1CB91BE2005582EA /* JJHomeViewController.h */,
+				B9511B901CB91BE2005582EA /* JJHomeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B9511B911CB91BE2005582EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B9D4D59C1CB651C400B7B90D = {
 			isa = PBXGroup;
 			children = (
+				B9D4D5E31CB69FE300B7B90D /* Podfile */,
 				B9D4D5A71CB651C400B7B90D /* JiaJia */,
 				B9D4D5C11CB651C400B7B90D /* JiaJiaTests */,
 				B9D4D5CC1CB651C400B7B90D /* JiaJiaUITests */,
 				B9D4D5A61CB651C400B7B90D /* Products */,
+				5692E8D922A7BB96B58585BE /* Pods */,
+				BE0A60D0ED4859D358E3C467 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,13 +133,11 @@
 		B9D4D5A71CB651C400B7B90D /* JiaJia */ = {
 			isa = PBXGroup;
 			children = (
+				B9D4D5E51CB6A68500B7B90D /* Configuration */,
+				B9D4D5DB1CB652B900B7B90D /* Home */,
 				B9D4D5AB1CB651C400B7B90D /* AppDelegate.h */,
 				B9D4D5AC1CB651C400B7B90D /* AppDelegate.m */,
-				B9D4D5AE1CB651C400B7B90D /* ViewController.h */,
-				B9D4D5AF1CB651C400B7B90D /* ViewController.m */,
-				B9D4D5B11CB651C400B7B90D /* Main.storyboard */,
 				B9D4D5B41CB651C400B7B90D /* Assets.xcassets */,
-				B9D4D5B61CB651C400B7B90D /* LaunchScreen.storyboard */,
 				B9D4D5B91CB651C400B7B90D /* Info.plist */,
 				B9D4D5A81CB651C400B7B90D /* Supporting Files */,
 			);
@@ -140,6 +170,31 @@
 			path = JiaJiaUITests;
 			sourceTree = "<group>";
 		};
+		B9D4D5DB1CB652B900B7B90D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B9511B8E1CB91BE2005582EA /* Controllers */,
+				B9511B911CB91BE2005582EA /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B9D4D5E51CB6A68500B7B90D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B9D4D5E61CB6A6AB00B7B90D /* JJMapAPIKey.h */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		BE0A60D0ED4859D358E3C467 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D022C8A3767389B7CA8251D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9D4D5D21CB651C400B7B90D /* Build configuration list for PBXNativeTarget "JiaJia" */;
 			buildPhases = (
+				6B50185FD4D36F0973358D11 /* Check Pods Manifest.lock */,
 				B9D4D5A11CB651C400B7B90D /* Sources */,
 				B9D4D5A21CB651C400B7B90D /* Frameworks */,
 				B9D4D5A31CB651C400B7B90D /* Resources */,
+				5C10FEDB7EE9C2FF1A305AC7 /* Embed Pods Frameworks */,
+				93EFA3314C32763E668B1002 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +265,12 @@
 				TargetAttributes = {
 					B9D4D5A41CB651C400B7B90D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = EL267FJ9ZW;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					B9D4D5BD1CB651C400B7B90D = {
 						CreatedOnToolsVersion = 7.3;
@@ -243,9 +307,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D4D5B81CB651C400B7B90D /* LaunchScreen.storyboard in Resources */,
+				B9D4D5E41CB69FE300B7B90D /* Podfile in Resources */,
 				B9D4D5B51CB651C400B7B90D /* Assets.xcassets in Resources */,
-				B9D4D5B31CB651C400B7B90D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,12 +328,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C10FEDB7EE9C2FF1A305AC7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B50185FD4D36F0973358D11 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		93EFA3314C32763E668B1002 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B9D4D5A11CB651C400B7B90D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D4D5B01CB651C400B7B90D /* ViewController.m in Sources */,
+				B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */,
 				B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */,
 				B9D4D5AA1CB651C400B7B90D /* main.m in Sources */,
 			);
@@ -306,25 +417,6 @@
 			targetProxy = B9D4D5CA1CB651C400B7B90D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B9D4D5B11CB651C400B7B90D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9D4D5B21CB651C400B7B90D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B9D4D5B61CB651C400B7B90D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9D4D5B71CB651C400B7B90D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B9D4D5D01CB651C400B7B90D /* Debug */ = {
@@ -411,22 +503,30 @@
 		};
 		B9D4D5D31CB651C400B7B90D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BBA2AB4D97922F8FE78E15E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JiaJia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jojo.JiaJia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JiaJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		B9D4D5D41CB651C400B7B90D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E063754B079967D4242C1E27 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JiaJia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jojo.JiaJia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JiaJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -496,6 +596,7 @@
 				B9D4D5D41CB651C400B7B90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9D4D5D51CB651C400B7B90D /* Build configuration list for PBXNativeTarget "JiaJiaTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +605,7 @@
 				B9D4D5D71CB651C400B7B90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9D4D5D81CB651C400B7B90D /* Build configuration list for PBXNativeTarget "JiaJiaUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +614,7 @@
 				B9D4D5DA1CB651C400B7B90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,14 +8,49 @@
 
 #import "AppDelegate.h"
 
+//View Controller
+#import "JJHomeViewController.h"
+
+//vendor
+#import <AMapNaviKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import <AMapNaviKit/AMapNaviKit.h>
+
+//configuration
+#import "JJMapAPIKey.h"
+
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+/**
+ *  配置高德地图API
+ */
+- (void)configureMapAPI{
+    
+    if (0 == [APIKey length]) {
+        NSLog(@"找不到map api key");
+        return;
+    }
+    
+    [MAMapServices sharedServices].apiKey = (NSString *)APIKey;
+    [AMapSearchServices sharedServices].apiKey = (NSString *)APIKey;
+    [AMapNaviServices sharedServices].apiKey = (NSString *)APIKey;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self configureMapAPI];
+    //加载首页
+    JJHomeViewController *homeViewController = [[JJHomeViewController alloc] init];
+    UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = mainNavigationController;
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
