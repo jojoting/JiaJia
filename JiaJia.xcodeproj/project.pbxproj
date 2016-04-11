@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		25EE2D4F70DCF79F8A2CFDC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D022C8A3767389B7CA8251D /* libPods.a */; };
 		B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B901CB91BE2005582EA /* JJHomeViewController.m */; };
+		B9511B9A1CBC168D005582EA /* JJVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B991CBC168D005582EA /* JJVehicleModel.m */; };
+		B9511B9D1CBC16A6005582EA /* JJVehicleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B9C1CBC16A6005582EA /* JJVehicleViewModel.m */; };
+		B9511BA01CBC16BA005582EA /* JJVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B9F1CBC16BA005582EA /* JJVehicleViewController.m */; };
+		B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BA31CBC1871005582EA /* JJBaseViewModel.m */; };
 		B9D4D5AA1CB651C400B7B90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5A91CB651C400B7B90D /* main.m */; };
 		B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5AC1CB651C400B7B90D /* AppDelegate.m */; };
 		B9D4D5B51CB651C400B7B90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D4D5B41CB651C400B7B90D /* Assets.xcassets */; };
@@ -39,6 +43,15 @@
 		8BBA2AB4D97922F8FE78E15E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B9511B8F1CB91BE2005582EA /* JJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJHomeViewController.h; sourceTree = "<group>"; };
 		B9511B901CB91BE2005582EA /* JJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJHomeViewController.m; sourceTree = "<group>"; };
+		B9511B931CBC1347005582EA /* JJBlueToothConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJBlueToothConfig.h; sourceTree = "<group>"; };
+		B9511B981CBC168D005582EA /* JJVehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVehicleModel.h; sourceTree = "<group>"; };
+		B9511B991CBC168D005582EA /* JJVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVehicleModel.m; sourceTree = "<group>"; };
+		B9511B9B1CBC16A6005582EA /* JJVehicleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVehicleViewModel.h; sourceTree = "<group>"; };
+		B9511B9C1CBC16A6005582EA /* JJVehicleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVehicleViewModel.m; sourceTree = "<group>"; };
+		B9511B9E1CBC16BA005582EA /* JJVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVehicleViewController.h; sourceTree = "<group>"; };
+		B9511B9F1CBC16BA005582EA /* JJVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVehicleViewController.m; sourceTree = "<group>"; };
+		B9511BA21CBC1871005582EA /* JJBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseViewModel.h; sourceTree = "<group>"; };
+		B9511BA31CBC1871005582EA /* JJBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBaseViewModel.m; sourceTree = "<group>"; };
 		B9D4D5A51CB651C400B7B90D /* JiaJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiaJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4D5A91CB651C400B7B90D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D4D5AB1CB651C400B7B90D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +120,52 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B9511B941CBC1669005582EA /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				B9511B951CBC1669005582EA /* Model */,
+				B9511B961CBC1669005582EA /* ViewController */,
+				B9511B971CBC1669005582EA /* ViewModel */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
+		B9511B951CBC1669005582EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B9511B981CBC168D005582EA /* JJVehicleModel.h */,
+				B9511B991CBC168D005582EA /* JJVehicleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B9511B961CBC1669005582EA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B9511B9E1CBC16BA005582EA /* JJVehicleViewController.h */,
+				B9511B9F1CBC16BA005582EA /* JJVehicleViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B9511B971CBC1669005582EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9511B9B1CBC16A6005582EA /* JJVehicleViewModel.h */,
+				B9511B9C1CBC16A6005582EA /* JJVehicleViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B9511BA11CBC1858005582EA /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				B9511BA21CBC1871005582EA /* JJBaseViewModel.h */,
+				B9511BA31CBC1871005582EA /* JJBaseViewModel.m */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		B9D4D59C1CB651C400B7B90D = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +192,8 @@
 		B9D4D5A71CB651C400B7B90D /* JiaJia */ = {
 			isa = PBXGroup;
 			children = (
+				B9511BA11CBC1858005582EA /* Public */,
+				B9511B941CBC1669005582EA /* Vehicle */,
 				B9D4D5E51CB6A68500B7B90D /* Configuration */,
 				B9D4D5DB1CB652B900B7B90D /* Home */,
 				B9D4D5AB1CB651C400B7B90D /* AppDelegate.h */,
@@ -183,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D4D5E61CB6A6AB00B7B90D /* JJMapAPIKey.h */,
+				B9511B931CBC1347005582EA /* JJBlueToothConfig.h */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -381,7 +443,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9511B9A1CBC168D005582EA /* JJVehicleModel.m in Sources */,
+				B9511BA01CBC16BA005582EA /* JJVehicleViewController.m in Sources */,
+				B9511B9D1CBC16A6005582EA /* JJVehicleViewModel.m in Sources */,
 				B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */,
+				B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */,
 				B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */,
 				B9D4D5AA1CB651C400B7B90D /* main.m in Sources */,
 			);

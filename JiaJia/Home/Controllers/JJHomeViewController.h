@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol MyDelegate <NSObject>
 
-- (void)sdsad;
-
-@end
 @interface JJHomeViewController : UIViewController
 
-@property (nonatomic, assign) id<MyDelegate> delegate;
 @end
