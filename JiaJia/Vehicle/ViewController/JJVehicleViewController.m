@@ -7,6 +7,8 @@
 //
 
 #import "JJVehicleViewController.h"
+#import "JJVehicleViewModel.h"
+#import "JJVehicleModel.h"
 
 @interface JJVehicleViewController ()
 
@@ -19,6 +21,13 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    JJVehicleViewModel *viewModel = [JJVehicleViewModel viewModelWithSuccessBlock:^(id returnValue) {
+        
+    } failureBlock:^{
+        
+    }];
+    [viewModel fetchVehicleData];
 }
 
 - (void)didReceiveMemoryWarning {

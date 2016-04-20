@@ -16,21 +16,6 @@
 @end
 @implementation JJVehicleViewModel
 
-#pragma mark - init
-+ (instancetype)viewModelWithSuccessBlock:(SuccessBlock)successBlock
-                             failureBlock:(FailureBlock)failureBlock{
-    return [[JJVehicleViewModel alloc] initWithSuccessBlock:(SuccessBlock)successBlock
-                                               failureBlock:(FailureBlock)failureBlock];
-}
-
-- (instancetype)initWithSuccessBlock:(SuccessBlock)successBlock
-                        failureBlock:(FailureBlock)failureBlock{
-    self = [super init];
-    if (self) {
-        [self setSuccessBlock:successBlock FailureBlock:failureBlock];
-    }
-    return self;
-}
 
 #pragma mark - public methods
 
@@ -48,7 +33,7 @@
  didDiscoverPeripheral:(CBPeripheral *)peripheral
      advertisementData:(NSDictionary<NSString *,id> *)advertisementData
                   RSSI:(NSNumber *)RSSI{
-    
+    NSLog(@"%@",peripheral);
 }
 #pragma mark - getter methods
 

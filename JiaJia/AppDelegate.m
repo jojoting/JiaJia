@@ -10,7 +10,7 @@
 
 //View Controller
 #import "JJHomeViewController.h"
-
+#import "JJVehicleViewController.h"
 //vendor
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
@@ -46,6 +46,7 @@
     [self configureMapAPI];
     //加载首页
     JJHomeViewController *homeViewController = [[JJHomeViewController alloc] init];
+    JJVehicleViewController *vehicleViewController = [[JJVehicleViewController alloc] init];
     UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = mainNavigationController;

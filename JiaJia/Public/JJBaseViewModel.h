@@ -17,11 +17,26 @@ typedef void (^FailureBlock)();
 @property(nonatomic, copy) SuccessBlock successBlock;
 @property(nonatomic, copy) FailureBlock failureBlock;
 
+
+/**
+ *  类方法初始化ViewModel
+ *
+ *  @param successBlock 设置成功的回调block
+ *  @param failureBlock 设置失败的回调block
+ *
+ *  @return
+ */
++ (instancetype)viewModelWithSuccessBlock:(SuccessBlock )successBlock
+                             failureBlock:(FailureBlock )failureBlock;
+
+
+
+
 /**
  *  设置回调block
  *
  *  @param successBlock 成功回调block
  *  @param failureBlock 失败回调block
  */
-- (void) setSuccessBlock:(SuccessBlock )successBlock FailureBlock:(FailureBlock )failureBlock;
+- (void)setSuccessBlock:(SuccessBlock )successBlock FailureBlock:(FailureBlock )failureBlock;
 @end

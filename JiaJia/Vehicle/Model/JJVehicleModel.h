@@ -10,4 +10,5 @@
 
 @interface JJVehicleModel : NSObject
 
+
 @end

@@ -13,6 +13,8 @@
 		B9511B9D1CBC16A6005582EA /* JJVehicleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B9C1CBC16A6005582EA /* JJVehicleViewModel.m */; };
 		B9511BA01CBC16BA005582EA /* JJVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B9F1CBC16BA005582EA /* JJVehicleViewController.m */; };
 		B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BA31CBC1871005582EA /* JJBaseViewModel.m */; };
+		B9511BAA1CC7A161005582EA /* JJSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BA91CC7A161005582EA /* JJSlideView.m */; };
+		B9511BAD1CC7A186005582EA /* JJUserCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BAC1CC7A186005582EA /* JJUserCenterView.m */; };
 		B9D4D5AA1CB651C400B7B90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5A91CB651C400B7B90D /* main.m */; };
 		B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5AC1CB651C400B7B90D /* AppDelegate.m */; };
 		B9D4D5B51CB651C400B7B90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D4D5B41CB651C400B7B90D /* Assets.xcassets */; };
@@ -52,6 +54,10 @@
 		B9511B9F1CBC16BA005582EA /* JJVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVehicleViewController.m; sourceTree = "<group>"; };
 		B9511BA21CBC1871005582EA /* JJBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseViewModel.h; sourceTree = "<group>"; };
 		B9511BA31CBC1871005582EA /* JJBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBaseViewModel.m; sourceTree = "<group>"; };
+		B9511BA81CC7A161005582EA /* JJSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJSlideView.h; sourceTree = "<group>"; };
+		B9511BA91CC7A161005582EA /* JJSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJSlideView.m; sourceTree = "<group>"; };
+		B9511BAB1CC7A186005582EA /* JJUserCenterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJUserCenterView.h; sourceTree = "<group>"; };
+		B9511BAC1CC7A186005582EA /* JJUserCenterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJUserCenterView.m; sourceTree = "<group>"; };
 		B9D4D5A51CB651C400B7B90D /* JiaJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiaJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4D5A91CB651C400B7B90D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D4D5AB1CB651C400B7B90D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 		B9511B911CB91BE2005582EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9511BAB1CC7A186005582EA /* JJUserCenterView.h */,
+				B9511BAC1CC7A186005582EA /* JJUserCenterView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +168,8 @@
 		B9511BA11CBC1858005582EA /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				B9511BA81CC7A161005582EA /* JJSlideView.h */,
+				B9511BA91CC7A161005582EA /* JJSlideView.m */,
 				B9511BA21CBC1871005582EA /* JJBaseViewModel.h */,
 				B9511BA31CBC1871005582EA /* JJBaseViewModel.m */,
 			);
@@ -446,8 +456,10 @@
 				B9511B9A1CBC168D005582EA /* JJVehicleModel.m in Sources */,
 				B9511BA01CBC16BA005582EA /* JJVehicleViewController.m in Sources */,
 				B9511B9D1CBC16A6005582EA /* JJVehicleViewModel.m in Sources */,
+				B9511BAD1CC7A186005582EA /* JJUserCenterView.m in Sources */,
 				B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */,
 				B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */,
+				B9511BAA1CC7A161005582EA /* JJSlideView.m in Sources */,
 				B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */,
 				B9D4D5AA1CB651C400B7B90D /* main.m in Sources */,
 			);
