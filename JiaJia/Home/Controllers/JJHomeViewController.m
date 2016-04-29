@@ -10,18 +10,21 @@
 
 //views
 #import "JJUserCenterView.h"
+#import "JJHomeExtensionView.h"
 
 //vendor
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapNaviKit/AMapNaviKit.h>
 
-#define UserCenterViewWidth 130
+#define UserCenterViewWidth 275
+#define ConfirmButtonHeight 45
 
-@interface JJHomeViewController ()<MAMapViewDelegate, JJSlideViewDelegate>
+@interface JJHomeViewController ()<MAMapViewDelegate, JJSlideViewDelegate, JJHomeExtensionViewDelegate, JJUserCenterDelegate>
 
-@property (nonatomic, strong) MAMapView         *mapView;
-@property (nonatomic, strong) JJUserCenterView  *userCenterView;
+@property (nonatomic, strong) MAMapView             *mapView;
+@property (nonatomic, strong) JJUserCenterView      *userCenterView;
+@property (nonatomic, strong) JJHomeExtensionView   *extensionView;
 
 @end
 
@@ -31,6 +34,13 @@
 
 - (void)initNavigationItem{
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(slideUserCenter:)];
+}
+
+- (void)initSubViews{
+    [self initMapView];
+    [self initUserCenterView];
+    [self initExtensionView];
+    [self initOtherViews];
 }
 
 - (void)initMapView{
@@ -45,12 +55,36 @@
 
 - (void)initUserCenterView{
     JJUserCenterView *userCenterView = [[JJUserCenterView alloc] initWithFrame:CGRectMake(0, 0, UserCenterViewWidth, self.view.frame.size.height)];
-    userCenterView.backgroundColor = [UIColor redColor];
+    userCenterView.backgroundColor = [UIColor whiteColor];
+    userCenterView.userInteractionEnabled = YES;
     
     self.userCenterView = userCenterView;
     self.userCenterView.delegate = self;
-    [self.view addSubview:self.userCenterView];
-    [self.view bringSubviewToFront:self.userCenterView];
+    [self.navigationController.view addSubview:self.userCenterView];
+    [self.navigationController.view bringSubviewToFront:self.userCenterView];
+    
+}
+
+- (void)initExtensionView{
+    self.extensionView = [[JJHomeExtensionView alloc] initWithLocationViewHeight:40 tripInfoLabelHeight:20];
+    [self.view addSubview:self.extensionView];
+    [self.view bringSubviewToFront:self.extensionView];
+    self.extensionView.delegate = self;
+}
+
+- (void)initOtherViews{
+    UIButton *confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(5, self.view.frame.size.height - 5 - ConfirmButtonHeight, self.view.frame.size.width - 10, ConfirmButtonHeight)];
+    [confirmButton setBackgroundColor:[UIColor lightGrayColor]];
+    [confirmButton setTitle:@"我要租车" forState:UIControlStateNormal];
+    [confirmButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+//    confirmButton
+    [confirmButton addTarget:self action:@selector(confirmButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:confirmButton];
+    [self.view bringSubviewToFront:confirmButton];
+}
+
+#pragma mark - UIControlEvent
+- (void)confirmButtonClicked:(UIButton *)sender{
     
 }
 #pragma mark - private megthods
@@ -72,14 +106,14 @@
     
     NSLog(@"%.2f", self.userCenterView.frame.origin.x);
 }
+
 #pragma mark - life cycle
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavigationItem];
-    [self initMapView];
-    [self initUserCenterView];
+    [self initSubViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,5 +128,22 @@
     }
 }
 
+#pragma mark - extensionView delegate
+- (void)extensionView:(JJHomeExtensionView *)extensionView didSelectStartLocationView:(JJLocationView *)locationView{
+    NSLog(@"选择出发地");
+}
+
+- (void)extensionView:(JJHomeExtensionView *)extensionView didSelectEndLocationView:(JJLocationView *)locationView index:(NSInteger )index{
+    NSLog(@"选择目的地%ld",index);
+}
+
+#pragma mark - user center delegate
+
+- (void)didSelectUserInfoWithUserCenterView:(JJUserCenterView *)userCenterView{
+    NSLog(@"选择个人信息");
+}
+- (void)userCenterView:(JJUserCenterView *)userCenterView buttonClickedAtIndex:(NSInteger )index{
+    NSLog(@"点击:%ld",index);
+}
 
 @end

@@ -8,10 +8,9 @@
 
 #import "JJSlideView.h"
 
-#define SlideAnimationDuration 0.7
-
+#define SlideAnimationDuration 0.5
+#define BackgroundViewAlpha 0.6
 @interface JJSlideView ()
-
 
 @end
 
@@ -25,14 +24,41 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:[UIScreen mainScreen].bounds];
     if (self) {
-        [self slideIn:NO];
+        [self initBackgroundView];
+        [self initSlideViewWithFrame:frame];
+        [self bindSwipeAction];
+        self.hidden = YES;
     }
     return self;
 }
 
+- (void)initBackgroundView{
+    self.backgroundView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.backgroundView.backgroundColor = [UIColor colorWithRed:0.f/255.f green:0.f/255.f blue:0.f/255.f alpha:BackgroundViewAlpha];
+    self.backgroundView.alpha = 0;
+    [self.backgroundView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundView:)]];
+    [self addSubview:self.backgroundView];
+}
+
+- (void)initSlideViewWithFrame:(CGRect )frame{
+    self.slideView = [[UIView alloc] initWithFrame:frame];
+    [self addSubview:self.slideView];
+    [self bringSubviewToFront:self.slideView];
+    [self slideIn:NO];
+}
+
+- (void)bindSwipeAction{
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+    [swipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.slideView addGestureRecognizer:swipe];
+}
 #pragma mark - private methods
+
+- (void)swipeAction:(UISwipeGestureRecognizer *)swipe{
+    [self slideIn:YES];
+}
 - (void)slideOut:(BOOL)animation{
     [self slideWithSlideState:JJSlideViewStateSlideOut animation:animation];
 }
@@ -47,20 +73,38 @@
 }
 
 - (void)setFrameWithSlideViewState:(JJSlideViewState )slideViewState animation:(BOOL)animation{
+    if (slideViewState == JJSlideViewStateSlideOut) {
+        self.hidden = slideViewState;
+    }
+    
     if (animation) {
         [UIView animateWithDuration:SlideAnimationDuration animations:^{
-            self.frame = CGRectMake(-self.frame.size.width * slideViewState, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+            self.slideView.frame = CGRectMake(-self.slideView.frame.size.width * slideViewState, self.slideView.frame.origin.y, self.slideView.frame.size.width, self.slideView.frame.size.height);
+            self.backgroundView.alpha = (1-slideViewState)*BackgroundViewAlpha;
         } completion:^(BOOL finished) {
+            if (slideViewState == JJSlideViewStateSlideIn) {
+                self.hidden = slideViewState;
+            }
             if ([self.delegate respondsToSelector:@selector(slideView:didSlideWithState:)]) {
                 [self.delegate slideView:self didSlideWithState:slideViewState];
             }
         }];
     }else {
-        self.frame = CGRectMake(-self.frame.size.width * slideViewState, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+        self.slideView.frame = CGRectMake(-self.slideView.frame.size.width * slideViewState, self.slideView.frame.origin.y, self.slideView.frame.size.width, self.slideView.frame.size.height);
+        self.backgroundView.alpha = (1-slideViewState)*BackgroundViewAlpha;
         if ([self.delegate respondsToSelector:@selector(slideView:didSlideWithState:)]) {
             [self.delegate slideView:self didSlideWithState:slideViewState];
         }
     }
+}
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor{
+    if (_slideView) {
+        _slideView.backgroundColor = backgroundColor;
+    }
+}
+
+- (void)tapBackgroundView:(UITapGestureRecognizer *)tap{
+    [self slideIn:YES];
 }
 @end

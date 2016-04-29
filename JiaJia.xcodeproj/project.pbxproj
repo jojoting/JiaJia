@@ -15,6 +15,8 @@
 		B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BA31CBC1871005582EA /* JJBaseViewModel.m */; };
 		B9511BAA1CC7A161005582EA /* JJSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BA91CC7A161005582EA /* JJSlideView.m */; };
 		B9511BAD1CC7A186005582EA /* JJUserCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BAC1CC7A186005582EA /* JJUserCenterView.m */; };
+		B9511BB01CCFCB7F005582EA /* JJHomeExtensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BAF1CCFCB7F005582EA /* JJHomeExtensionView.m */; };
+		B9511BB31CCFCC78005582EA /* JJLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BB21CCFCC78005582EA /* JJLocationView.m */; };
 		B9D4D5AA1CB651C400B7B90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5A91CB651C400B7B90D /* main.m */; };
 		B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D4D5AC1CB651C400B7B90D /* AppDelegate.m */; };
 		B9D4D5B51CB651C400B7B90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D4D5B41CB651C400B7B90D /* Assets.xcassets */; };
@@ -58,6 +60,10 @@
 		B9511BA91CC7A161005582EA /* JJSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJSlideView.m; sourceTree = "<group>"; };
 		B9511BAB1CC7A186005582EA /* JJUserCenterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJUserCenterView.h; sourceTree = "<group>"; };
 		B9511BAC1CC7A186005582EA /* JJUserCenterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJUserCenterView.m; sourceTree = "<group>"; };
+		B9511BAE1CCFCB7F005582EA /* JJHomeExtensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJHomeExtensionView.h; sourceTree = "<group>"; };
+		B9511BAF1CCFCB7F005582EA /* JJHomeExtensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJHomeExtensionView.m; sourceTree = "<group>"; };
+		B9511BB11CCFCC78005582EA /* JJLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJLocationView.h; sourceTree = "<group>"; };
+		B9511BB21CCFCC78005582EA /* JJLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJLocationView.m; sourceTree = "<group>"; };
 		B9D4D5A51CB651C400B7B90D /* JiaJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiaJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4D5A91CB651C400B7B90D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D4D5AB1CB651C400B7B90D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +130,10 @@
 			children = (
 				B9511BAB1CC7A186005582EA /* JJUserCenterView.h */,
 				B9511BAC1CC7A186005582EA /* JJUserCenterView.m */,
+				B9511BAE1CCFCB7F005582EA /* JJHomeExtensionView.h */,
+				B9511BAF1CCFCB7F005582EA /* JJHomeExtensionView.m */,
+				B9511BB11CCFCC78005582EA /* JJLocationView.h */,
+				B9511BB21CCFCC78005582EA /* JJLocationView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +186,45 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
+		B98A37961CD123BE00E9CC5A /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				B98A37971CD123F800E9CC5A /* Controllers */,
+				B98A37981CD123F800E9CC5A /* Models */,
+				B98A37991CD123F800E9CC5A /* ViewModels */,
+				B98A379A1CD123F800E9CC5A /* Views */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		B98A37971CD123F800E9CC5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B98A37981CD123F800E9CC5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B98A37991CD123F800E9CC5A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B98A379A1CD123F800E9CC5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B9D4D59C1CB651C400B7B90D = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +251,7 @@
 		B9D4D5A71CB651C400B7B90D /* JiaJia */ = {
 			isa = PBXGroup;
 			children = (
+				B98A37961CD123BE00E9CC5A /* Address */,
 				B9511BA11CBC1858005582EA /* Public */,
 				B9511B941CBC1669005582EA /* Vehicle */,
 				B9D4D5E51CB6A68500B7B90D /* Configuration */,
@@ -458,10 +508,12 @@
 				B9511B9D1CBC16A6005582EA /* JJVehicleViewModel.m in Sources */,
 				B9511BAD1CC7A186005582EA /* JJUserCenterView.m in Sources */,
 				B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */,
+				B9511BB01CCFCB7F005582EA /* JJHomeExtensionView.m in Sources */,
 				B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */,
 				B9511BAA1CC7A161005582EA /* JJSlideView.m in Sources */,
 				B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */,
 				B9D4D5AA1CB651C400B7B90D /* main.m in Sources */,
+				B9511BB31CCFCC78005582EA /* JJLocationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

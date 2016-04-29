@@ -22,6 +22,8 @@ typedef NS_ENUM(NSInteger, JJSlideViewState) {
 @end
 @interface JJSlideView : UIView
 
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIView *slideView;
 @property (nonatomic, assign) JJSlideViewState slideViewState;
 @property (nonatomic, assign) id<JJSlideViewDelegate> delegate;
 
