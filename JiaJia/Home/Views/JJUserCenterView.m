@@ -32,6 +32,7 @@
 
 @end
 
+
 @implementation JJUserCenterView
 
 #pragma mark - init

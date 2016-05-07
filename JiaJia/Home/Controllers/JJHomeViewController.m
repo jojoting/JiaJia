@@ -6,8 +6,11 @@
 //  Copyright © 2016年 jojoting. All rights reserved.
 //
 
+//controllers
 #import "JJHomeViewController.h"
-
+#import "JJUserViewController.h"
+#import "JJAddAddressViewController.h"
+#import "JJUserLoginViewController.h"
 //views
 #import "JJUserCenterView.h"
 #import "JJHomeExtensionView.h"
@@ -16,11 +19,12 @@
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapNaviKit/AMapNaviKit.h>
+#import <BmobSDK/Bmob.h>
 
 #define UserCenterViewWidth 275
 #define ConfirmButtonHeight 45
 
-@interface JJHomeViewController ()<MAMapViewDelegate, JJSlideViewDelegate, JJHomeExtensionViewDelegate, JJUserCenterDelegate>
+@interface JJHomeViewController ()<MAMapViewDelegate, JJHomeExtensionViewDelegate, JJUserCenterDelegate>
 
 @property (nonatomic, strong) MAMapView             *mapView;
 @property (nonatomic, strong) JJUserCenterView      *userCenterView;
@@ -121,6 +125,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.userCenterView.hidden = YES;
+}
 #pragma mark - map delegate
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation{
     if (updatingLocation) {
@@ -135,12 +147,25 @@
 
 - (void)extensionView:(JJHomeExtensionView *)extensionView didSelectEndLocationView:(JJLocationView *)locationView index:(NSInteger )index{
     NSLog(@"选择目的地%ld",index);
+    JJAddAddressViewController *addAddressViewController = [[JJAddAddressViewController alloc] init];
+    [self.navigationController pushViewController:addAddressViewController animated:YES];
 }
 
 #pragma mark - user center delegate
 
 - (void)didSelectUserInfoWithUserCenterView:(JJUserCenterView *)userCenterView{
     NSLog(@"选择个人信息");
+    [self.userCenterView slideIn:NO];
+    
+    if (![BmobUser getCurrentUser]) {
+        JJUserLoginViewController *loginViewController = [[JJUserLoginViewController alloc] init];
+        loginViewController.navigationItem.title = @"登录";
+        [self.navigationController pushViewController:loginViewController animated:YES];
+        return;
+    }
+    JJUserViewController *userViewController = [[JJUserViewController alloc] init];
+    userViewController.navigationItem.title = @"个人信息";
+    [self.navigationController pushViewController:userViewController animated:YES];
 }
 - (void)userCenterView:(JJUserCenterView *)userCenterView buttonClickedAtIndex:(NSInteger )index{
     NSLog(@"点击:%ld",index);

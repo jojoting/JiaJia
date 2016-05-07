@@ -85,16 +85,10 @@
             if (slideViewState == JJSlideViewStateSlideIn) {
                 self.hidden = slideViewState;
             }
-            if ([self.delegate respondsToSelector:@selector(slideView:didSlideWithState:)]) {
-                [self.delegate slideView:self didSlideWithState:slideViewState];
-            }
         }];
     }else {
         self.slideView.frame = CGRectMake(-self.slideView.frame.size.width * slideViewState, self.slideView.frame.origin.y, self.slideView.frame.size.width, self.slideView.frame.size.height);
         self.backgroundView.alpha = (1-slideViewState)*BackgroundViewAlpha;
-        if ([self.delegate respondsToSelector:@selector(slideView:didSlideWithState:)]) {
-            [self.delegate slideView:self didSlideWithState:slideViewState];
-        }
     }
 }
 

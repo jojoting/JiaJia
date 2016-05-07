@@ -1,13 +1,21 @@
 PODS:
   - AMapNavi (1.4.0)
   - AMapSearch (3.2.0)
+  - BmobSDK (1.7.0)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
 
 DEPENDENCIES:
   - AMapNavi
   - AMapSearch
+  - BmobSDK
+  - Mantle
 
 SPEC CHECKSUMS:
   AMapNavi: 096aef30201ca092c40a60f35795ad949824c8d4
   AMapSearch: a885f0702578a441a22cb66fa74f8918c6d19e6f
+  BmobSDK: 1a7bb2aa514e69663f5b561a5c5cc5b479b20ad2
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
 
 COCOAPODS: 0.39.0

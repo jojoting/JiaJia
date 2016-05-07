@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		25EE2D4F70DCF79F8A2CFDC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D022C8A3767389B7CA8251D /* libPods.a */; };
+		B9509AF81CD49649001A778B /* JJUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9509AF71CD49649001A778B /* JJUserViewController.m */; };
+		B9509AFE1CD89093001A778B /* buttonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B9509AFD1CD89093001A778B /* buttonImage.png */; };
+		B9509B001CD890C1001A778B /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B9509AFF1CD890C1001A778B /* user.json */; };
+		B9509B021CD8916D001A778B /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = B9509B011CD8916D001A778B /* default_avatar.png */; };
+		B9509B051CD91403001A778B /* JJAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9509B041CD91403001A778B /* JJAddAddressViewController.m */; };
+		B9509B071CD91475001A778B /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = B9509B061CD91475001A778B /* address.json */; };
+		B9509B0A1CD9E189001A778B /* JJAddAddressCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9509B091CD9E189001A778B /* JJAddAddressCollectionViewCell.m */; };
+		B9509B0E1CDD0AC7001A778B /* JJBmobEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B9509B0D1CDD0AC7001A778B /* JJBmobEngine.m */; };
+		B9509B121CDD0D53001A778B /* JJUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9509B111CDD0D53001A778B /* JJUserLoginViewController.m */; };
+		B9509B151CDD0D6B001A778B /* JJRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9509B141CDD0D6B001A778B /* JJRegisterViewController.m */; };
+		B9509B181CDE33AB001A778B /* JJUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9509B171CDE33AB001A778B /* JJUserTableViewCell.m */; };
 		B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B901CB91BE2005582EA /* JJHomeViewController.m */; };
 		B9511B9A1CBC168D005582EA /* JJVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B991CBC168D005582EA /* JJVehicleModel.m */; };
 		B9511B9D1CBC16A6005582EA /* JJVehicleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511B9C1CBC16A6005582EA /* JJVehicleViewModel.m */; };
@@ -45,6 +56,26 @@
 /* Begin PBXFileReference section */
 		4D022C8A3767389B7CA8251D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBA2AB4D97922F8FE78E15E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B9509AF61CD49649001A778B /* JJUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJUserViewController.h; sourceTree = "<group>"; };
+		B9509AF71CD49649001A778B /* JJUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJUserViewController.m; sourceTree = "<group>"; };
+		B9509AFD1CD89093001A778B /* buttonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonImage.png; sourceTree = "<group>"; };
+		B9509AFF1CD890C1001A778B /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		B9509B011CD8916D001A778B /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
+		B9509B031CD91403001A778B /* JJAddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJAddAddressViewController.h; sourceTree = "<group>"; };
+		B9509B041CD91403001A778B /* JJAddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJAddAddressViewController.m; sourceTree = "<group>"; };
+		B9509B061CD91475001A778B /* address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address.json; sourceTree = "<group>"; };
+		B9509B081CD9E189001A778B /* JJAddAddressCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJAddAddressCollectionViewCell.h; sourceTree = "<group>"; };
+		B9509B091CD9E189001A778B /* JJAddAddressCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJAddAddressCollectionViewCell.m; sourceTree = "<group>"; };
+		B9509B0B1CDC7338001A778B /* JJBmobKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJBmobKey.h; sourceTree = "<group>"; };
+		B9509B0C1CDD0AC7001A778B /* JJBmobEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBmobEngine.h; sourceTree = "<group>"; };
+		B9509B0D1CDD0AC7001A778B /* JJBmobEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBmobEngine.m; sourceTree = "<group>"; };
+		B9509B0F1CDD0B53001A778B /* JJGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJGlobal.h; sourceTree = "<group>"; };
+		B9509B101CDD0D53001A778B /* JJUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJUserLoginViewController.h; sourceTree = "<group>"; };
+		B9509B111CDD0D53001A778B /* JJUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJUserLoginViewController.m; sourceTree = "<group>"; };
+		B9509B131CDD0D6B001A778B /* JJRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJRegisterViewController.h; sourceTree = "<group>"; };
+		B9509B141CDD0D6B001A778B /* JJRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJRegisterViewController.m; sourceTree = "<group>"; };
+		B9509B161CDE33AB001A778B /* JJUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJUserTableViewCell.h; sourceTree = "<group>"; };
+		B9509B171CDE33AB001A778B /* JJUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJUserTableViewCell.m; sourceTree = "<group>"; };
 		B9511B8F1CB91BE2005582EA /* JJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJHomeViewController.h; sourceTree = "<group>"; };
 		B9511B901CB91BE2005582EA /* JJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJHomeViewController.m; sourceTree = "<group>"; };
 		B9511B931CBC1347005582EA /* JJBlueToothConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJBlueToothConfig.h; sourceTree = "<group>"; };
@@ -116,6 +147,56 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B9509AF21CD49631001A778B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B9509AF31CD49631001A778B /* Controllers */,
+				B9509AF41CD49631001A778B /* Models */,
+				B9509AF51CD49631001A778B /* Views */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		B9509AF31CD49631001A778B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9509AF61CD49649001A778B /* JJUserViewController.h */,
+				B9509AF71CD49649001A778B /* JJUserViewController.m */,
+				B9509B101CDD0D53001A778B /* JJUserLoginViewController.h */,
+				B9509B111CDD0D53001A778B /* JJUserLoginViewController.m */,
+				B9509B131CDD0D6B001A778B /* JJRegisterViewController.h */,
+				B9509B141CDD0D6B001A778B /* JJRegisterViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B9509AF41CD49631001A778B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9509AF51CD49631001A778B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9509B161CDE33AB001A778B /* JJUserTableViewCell.h */,
+				B9509B171CDE33AB001A778B /* JJUserTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B9509AFC1CD89093001A778B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9509B011CD8916D001A778B /* default_avatar.png */,
+				B9509AFD1CD89093001A778B /* buttonImage.png */,
+				B9509AFF1CD890C1001A778B /* user.json */,
+				B9509B061CD91475001A778B /* address.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B9511B8E1CB91BE2005582EA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +263,9 @@
 				B9511BA91CC7A161005582EA /* JJSlideView.m */,
 				B9511BA21CBC1871005582EA /* JJBaseViewModel.h */,
 				B9511BA31CBC1871005582EA /* JJBaseViewModel.m */,
+				B9509B0C1CDD0AC7001A778B /* JJBmobEngine.h */,
+				B9509B0D1CDD0AC7001A778B /* JJBmobEngine.m */,
+				B9509B0F1CDD0B53001A778B /* JJGlobal.h */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -200,6 +284,8 @@
 		B98A37971CD123F800E9CC5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9509B031CD91403001A778B /* JJAddAddressViewController.h */,
+				B9509B041CD91403001A778B /* JJAddAddressViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +307,8 @@
 		B98A379A1CD123F800E9CC5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9509B081CD9E189001A778B /* JJAddAddressCollectionViewCell.h */,
+				B9509B091CD9E189001A778B /* JJAddAddressCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +339,8 @@
 		B9D4D5A71CB651C400B7B90D /* JiaJia */ = {
 			isa = PBXGroup;
 			children = (
+				B9509AFC1CD89093001A778B /* Resources */,
+				B9509AF21CD49631001A778B /* User */,
 				B98A37961CD123BE00E9CC5A /* Address */,
 				B9511BA11CBC1858005582EA /* Public */,
 				B9511B941CBC1669005582EA /* Vehicle */,
@@ -305,6 +395,7 @@
 			children = (
 				B9D4D5E61CB6A6AB00B7B90D /* JJMapAPIKey.h */,
 				B9511B931CBC1347005582EA /* JJBlueToothConfig.h */,
+				B9509B0B1CDC7338001A778B /* JJBmobKey.h */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -429,6 +520,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9509B001CD890C1001A778B /* user.json in Resources */,
+				B9509B021CD8916D001A778B /* default_avatar.png in Resources */,
+				B9509B071CD91475001A778B /* address.json in Resources */,
+				B9509AFE1CD89093001A778B /* buttonImage.png in Resources */,
 				B9D4D5E41CB69FE300B7B90D /* Podfile in Resources */,
 				B9D4D5B51CB651C400B7B90D /* Assets.xcassets in Resources */,
 			);
@@ -504,14 +599,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9511B9A1CBC168D005582EA /* JJVehicleModel.m in Sources */,
+				B9509B121CDD0D53001A778B /* JJUserLoginViewController.m in Sources */,
 				B9511BA01CBC16BA005582EA /* JJVehicleViewController.m in Sources */,
 				B9511B9D1CBC16A6005582EA /* JJVehicleViewModel.m in Sources */,
 				B9511BAD1CC7A186005582EA /* JJUserCenterView.m in Sources */,
 				B9511B921CB91BE2005582EA /* JJHomeViewController.m in Sources */,
 				B9511BB01CCFCB7F005582EA /* JJHomeExtensionView.m in Sources */,
 				B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */,
+				B9509B151CDD0D6B001A778B /* JJRegisterViewController.m in Sources */,
+				B9509AF81CD49649001A778B /* JJUserViewController.m in Sources */,
 				B9511BAA1CC7A161005582EA /* JJSlideView.m in Sources */,
 				B9D4D5AD1CB651C400B7B90D /* AppDelegate.m in Sources */,
+				B9509B0A1CD9E189001A778B /* JJAddAddressCollectionViewCell.m in Sources */,
+				B9509B051CD91403001A778B /* JJAddAddressViewController.m in Sources */,
+				B9509B181CDE33AB001A778B /* JJUserTableViewCell.m in Sources */,
+				B9509B0E1CDD0AC7001A778B /* JJBmobEngine.m in Sources */,
 				B9D4D5AA1CB651C400B7B90D /* main.m in Sources */,
 				B9511BB31CCFCC78005582EA /* JJLocationView.m in Sources */,
 			);

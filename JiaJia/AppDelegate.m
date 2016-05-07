@@ -14,10 +14,11 @@
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapNaviKit/AMapNaviKit.h>
+#import <BmobSDK/Bmob.h>
 
 //configuration
 #import "JJMapAPIKey.h"
-
+#import "JJBmobKey.h"
 
 @interface AppDelegate ()
 
@@ -40,9 +41,21 @@
     [AMapNaviServices sharedServices].apiKey = (NSString *)APIKey;
 }
 
+/**
+ *  配置bmob
+ */
+- (void)configureBmobKey{
+    if (0 == [BmobKey length]) {
+        NSLog(@"找不到bmob key");
+        return;
+    }
+    
+    [Bmob registerWithAppKey:BmobKey];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self configureMapAPI];
+    [self configureBmobKey];
     //加载首页
     JJHomeViewController *homeViewController = [[JJHomeViewController alloc] init];
     UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];

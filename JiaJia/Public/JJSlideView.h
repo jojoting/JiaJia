@@ -14,18 +14,12 @@ typedef NS_ENUM(NSInteger, JJSlideViewState) {
 };
 
 @class JJSlideView;
-@protocol JJSlideViewDelegate <NSObject>
 
-@optional
-- (void)slideView:(JJSlideView *)slideView didSlideWithState:(JJSlideViewState)slideViewState;
-
-@end
 @interface JJSlideView : UIView
 
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIView *slideView;
 @property (nonatomic, assign) JJSlideViewState slideViewState;
-@property (nonatomic, assign) id<JJSlideViewDelegate> delegate;
 
 - (void)slideOut:(BOOL)animation;
 - (void)slideIn:(BOOL)animation;
