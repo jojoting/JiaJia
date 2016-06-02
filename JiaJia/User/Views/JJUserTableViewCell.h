@@ -12,6 +12,10 @@
 
 @property (nonatomic, strong) UITextField   *textField;
 @property (nonatomic, strong) UILabel       *titleLabel;
-+ (instancetype)cellWithTittle:(NSString *)title placeholder:(NSString *)placeholder;
+@property (nonatomic, strong) UIButton      *validateButton;
+@property (nonatomic, copy) NSString    *title;
+@property (nonatomic, copy) NSString    *placeholder;
+@property (nonatomic, assign) BOOL      isValidateButtonHidden;
++ (instancetype)cellWithIdentifier:(NSString *)identifier tittle:(NSString *)title placeholder:(NSString *)placeholder;
 
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^AddressReturnBlock)(NSString *locationTitle, CGFloat latitude, CGFloat longitude);
 
 @interface JJAddAddressViewController : UIViewController
 
+@property (nonatomic, assign) CGFloat currentLatitude;
+@property (nonatomic, assign) CGFloat currentLongitude;
+@property (nonatomic, copy) AddressReturnBlock returnBlock;
 @end

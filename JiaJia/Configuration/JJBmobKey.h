@@ -10,6 +10,6 @@
 #define JJBmobKey_h
 
 
-const static NSString *BmobKey = @"085551f4764d18bb2e895a81ad0f378c";
+static NSString * const BmobKey = @"085551f4764d18bb2e895a81ad0f378c";
 
 #endif /* JJBmobKey_h */

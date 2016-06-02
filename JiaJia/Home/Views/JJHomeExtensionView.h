@@ -12,8 +12,12 @@
 @protocol JJHomeExtensionViewDelegate <NSObject>
 
 @optional
+//选择出发地
 - (void)extensionView:(JJHomeExtensionView *)extensionView didSelectStartLocationView:(JJLocationView *)locationView;
+//选择目的地
 - (void)extensionView:(JJHomeExtensionView *)extensionView didSelectEndLocationView:(JJLocationView *)locationView index:(NSInteger )index;
+//成功添加目的地
+- (void)extensionView:(JJHomeExtensionView *)extensionView didAddEndLocationView:(JJLocationView *)locationView atIndex:(NSInteger )index;
 
 
 @end
@@ -31,6 +35,17 @@
 @property (nonatomic, assign) CGFloat locationViewHeight;
 
 /**
+ *  起始位置名字
+ */
+@property (nonatomic, copy) NSString    *startLocationTitle;
+
+/**
+ *  行程信息
+ */
+@property (nonatomic, copy, readonly) NSString    *tripInfo;
+
+@property (nonatomic, assign) BOOL       isTrpiInfoLabelShow;
+/**
  *  使用输入地址栏的高度初始化
  *
  *  @param locationViewHeigt 输入地址栏的高度
@@ -39,8 +54,21 @@
  */
 - (instancetype) initWithLocationViewHeight:(CGFloat )locationViewHeight tripInfoLabelHeight:(CGFloat )tripInfoLabelHeight;
 
+
 /**
- *  添加一个目的地
+ *  设置某一目的地的名字
+ *
+ *  @param title 名字
+ *  @param index 索引
  */
-- (JJLocationView *)addEndLocationView;
+- (void)setLocationTitle:(NSString *)title atIndex:(NSInteger )index;
+
+
+/**
+ *  设置路程的距离与时间
+ *
+ *  @param distance 距离
+ *  @param time     时间
+ */
+- (void)setTripDistance:(CGFloat )distance time:(CGFloat )time;
 @end

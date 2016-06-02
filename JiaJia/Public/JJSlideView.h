@@ -21,7 +21,9 @@ typedef NS_ENUM(NSInteger, JJSlideViewState) {
 @property (nonatomic, strong) UIView *slideView;
 @property (nonatomic, assign) JJSlideViewState slideViewState;
 
+//滑出
 - (void)slideOut:(BOOL)animation;
+//滑入
 - (void)slideIn:(BOOL)animation;
 
 @end

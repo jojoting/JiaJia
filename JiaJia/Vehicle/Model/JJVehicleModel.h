@@ -10,5 +10,11 @@
 
 @interface JJVehicleModel : NSObject
 
+@property (nonatomic, strong) NSNumber  *speed;
+@property (nonatomic, strong) NSNumber  *distance;
+@property (nonatomic, strong) NSNumber  *time;
+@property (nonatomic, strong) NSNumber  *leftTime;
+@property (nonatomic, assign) NSInteger  battery;
+
 
 @end

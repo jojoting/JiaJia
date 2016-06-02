@@ -7,7 +7,7 @@
 //
 
 #import "JJAddAddressCollectionViewCell.h"
-
+#import "JJGlobal.h"
 @interface JJAddAddressCollectionViewCell ()
 
 @property (nonatomic, strong) UIView    *container;
@@ -27,7 +27,7 @@
 }
 
 - (void)layoutSubviews{
-    self.container.frame = CGRectMake(10, 5, self.frame.size.width - 20, self.frame.size.width - 20);
+    self.container.frame = CGRectMake(10, 15, self.frame.size.width - 20, self.frame.size.width - 20);
     self.container.layer.masksToBounds = YES;
     self.container.layer.cornerRadius = self.container.frame.size.width / 2;
     
@@ -37,8 +37,8 @@
 - (UIView *)container{
     if (!_container) {
         _container = [[UIView alloc] init];
-        _container.backgroundColor = [UIColor clearColor];
-        _container.layer.borderWidth = 1.f;
+        _container.backgroundColor = COLOR_HEX(0xFBAF19, 0.6f);
+//        _container.layer.borderWidth = 1.f;
     }
     return _container;
 }
@@ -47,7 +47,8 @@
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] init];
         _textLabel.textAlignment = NSTextAlignmentCenter;
-        _textLabel.font = [UIFont systemFontOfSize:12.f];
+        _textLabel.font = [UIFont systemFontOfSize:12.5];
+        _textLabel.textColor = [UIColor whiteColor];
     }
     return _textLabel;
 }
@@ -55,6 +56,14 @@
 - (void)setText:(NSString *)text{
     _text = text;
     _textLabel.text = text;
+}
+
+- (void)setSelected:(BOOL)selected{
+    if (selected) {
+        self.container.backgroundColor = COLOR_HEX(0xFBAF19, 1.f);
+    }else{
+        self.container.backgroundColor = COLOR_HEX(0xFBAF19, .6f);
+    }
 }
 
 @end

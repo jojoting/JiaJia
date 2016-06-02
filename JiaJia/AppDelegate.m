@@ -10,6 +10,7 @@
 
 //View Controller
 #import "JJHomeViewController.h"
+#import "JJGuideViewController.h"
 //vendor
 #import <AMapNaviKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
@@ -19,6 +20,7 @@
 //configuration
 #import "JJMapAPIKey.h"
 #import "JJBmobKey.h"
+#import "JJGlobal.h"
 
 @interface AppDelegate ()
 
@@ -45,23 +47,50 @@
  *  配置bmob
  */
 - (void)configureBmobKey{
-    if (0 == [BmobKey length]) {
-        NSLog(@"找不到bmob key");
-        return;
-    }
-    
-    [Bmob registerWithAppKey:BmobKey];
+//    if (0 == [BmobKey length]) {
+//        NSLog(@"找不到bmob key");
+//        return;
+//    }
+//    
+    [Bmob registerWithAppKey:@"085551f4764d18bb2e895a81ad0f378c"];
+}
+
+- (void)showHomeViewController:(NSNotification *)notify{
+    JJHomeViewController *homeViewController = [[JJHomeViewController alloc] init];
+    UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    [mainNavigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    mainNavigationController.navigationBar.barTintColor = MAIN_COLOR;
+    mainNavigationController.navigationBar.translucent = YES;
+    mainNavigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = mainNavigationController;
+    [self.window makeKeyAndVisible];
+
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self configureMapAPI];
     [self configureBmobKey];
-    //加载首页
-    JJHomeViewController *homeViewController = [[JJHomeViewController alloc] init];
-    UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = mainNavigationController;
-    [self.window makeKeyAndVisible];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHomeViewController:) name:NOTIFICATION_GUIDE object:nil];
+    
+    NSString * key = @"CFBundleVersion";
+    NSString * lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    
+    NSString * currentVersion = [NSBundle mainBundle].infoDictionary[key];
+    
+    
+    if([currentVersion isEqualToString:lastVersion]) {
+        //加载首页
+        [self showHomeViewController:nil];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        self.window.rootViewController = [[JJGuideViewController alloc]init];
+        [self.window makeKeyAndVisible];
+    }
+
     
     // Override point for customization after application launch.
     return YES;

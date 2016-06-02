@@ -8,18 +8,24 @@
 
 //controllers
 #import "JJUserViewController.h"
+#import "JJUserAuthViewController.h"
+#import "JJUserModifyViewController.h"
 
 //vendor
 #import <BmobSDK/Bmob.h>
+#import <UIImageView+WebCache.h>
 
-//config
+//global
 #import "JJGlobal.h"
+#import "JJQiniuEngine.h"
+
 static NSString *avatalCellIdentifier = @"avatarCell";
 static NSString *normalCellIdentifier = @"normalCell";
-@interface JJUserViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface JJUserViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) UITableView   *tableView;
 @property (nonatomic, strong) BmobUser      *user;
+@property (nonatomic, strong) UIPickerView  *pickerView;
 @end
 
 @implementation JJUserViewController
@@ -27,10 +33,14 @@ static NSString *normalCellIdentifier = @"normalCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    self.user = [BmobUser getCurrentUser];
      // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.user = [BmobUser getCurrentUser];
+    [self.tableView reloadData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -38,6 +48,11 @@ static NSString *normalCellIdentifier = @"normalCell";
 
 #pragma mark - private
 - (UITableViewCell *)configCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath{
+    cell.textLabel.font = [UIFont systemFontOfSize:11.f];
+    cell.textLabel.textColor = COLOR_HEX(0x58595B, 1.0);
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:11.f];
+    cell.detailTextLabel.textColor = COLOR_HEX(0x58595B, 1.0);
+
     if (indexPath.section == 1) {
         cell.textLabel.text = @"身份认证";
     }
@@ -90,6 +105,29 @@ static NSString *normalCellIdentifier = @"normalCell";
     }
     return cell;
 }
+
+
+- (void)changeAvatar{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.navigationBar.barTintColor = MAIN_COLOR;
+    picker.navigationBar.tintColor = [UIColor whiteColor];
+    picker.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)uploadImageData:(NSData *)data{
+    [[JJQiniuEngine sharedInstance] getQiniuTokenAndUpload:data block:^(QNResponseInfo *info, NSString *key, NSDictionary *dict) {
+        WEAKSELF
+        if ([key length] > 0) {
+            [weakSelf.user setObject:[[JJQiniuEngine sharedInstance] getQiniuFullUrl:key] forKey:KEY_USER_AVATAR];
+            [weakSelf.user updateInBackground];
+            [weakSelf.tableView reloadData];
+            
+        }
+    }];
+}
 #pragma mark - table view datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;
@@ -119,12 +157,16 @@ static NSString *normalCellIdentifier = @"normalCell";
         if (avatarCell == nil) {
             avatarCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:avatalCellIdentifier];
         }
-        avatarCell.imageView.image = [UIImage imageNamed:[self.user objectForKey:KEY_USER_AVATAR]];
+        NSString *urlString = [NSString stringWithFormat:@"http://%@",[self.user objectForKey:KEY_USER_AVATAR]];
+        [avatarCell.imageView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
 //        avatarCell.imageView.layer.masksToBounds = YES;
-//        avatarCell.imageView.layer.cornerRadius = 40;
+//        avatarCell.imageView.layer.cornerRadius = avatarCell.imageView.frame.size.width / 2;
         avatarCell.detailTextLabel.text = @"修改头像";
+        avatarCell.detailTextLabel.font = [UIFont systemFontOfSize:11.f];
+        avatarCell.detailTextLabel.textColor = COLOR_HEX(0x58595B, 1.0);
         avatarCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         avatarCell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        
         return avatarCell;
     }
     
@@ -139,7 +181,81 @@ static NSString *normalCellIdentifier = @"normalCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        //修改头像
+        [self changeAvatar];
+    }
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        //修改手机
+        JJUserModifyViewController *validateViewController = [[JJUserModifyViewController alloc] initValidateWithType:JJUserValidateTypePhone titles:@[@"手机号码",@"验证码"] placeholders:@[self.user.username,@"请输入验证码"]];
+        validateViewController.navigationItem.title = @"验证手机号";
+        [self.navigationController pushViewController:validateViewController animated:YES];
+    }
+    if (indexPath.section == 0 && indexPath.row == 2) {
+        //修改昵称
+        JJUserModifyViewController *modifyViewController = [[JJUserModifyViewController alloc] initModifyWithType:JJuserModifyTypeName titles:@[@""] placeholders:@[@"请输入昵称"]];
+        modifyViewController.navigationItem.title = @"修改昵称";
+        [self.navigationController pushViewController:modifyViewController animated:YES];
+    }
+
+    if (indexPath.section == 0 && indexPath.row == 3) {
+        //修改密码
+        JJUserModifyViewController *validateViewController = [[JJUserModifyViewController alloc] initValidateWithType:JJUserValidateTypePassword titles:@[@"原密码"] placeholders:@[@"请输入原密码"]];
+        validateViewController.navigationItem.title = @"验证原密码";
+        [self.navigationController pushViewController:validateViewController animated:YES];
+    }
+
+    if (indexPath.section == 0 && indexPath.row == 4) {
+        //修改性别
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"修改性别" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.user setObject:@"男" forKey:KEY_USER_GENDER];
+            [self.user updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                if (isSuccessful) {
+                    WEAKSELF
+                    [weakSelf.tableView reloadData];
+                }
+            }];
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"女" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.user setObject:@"女" forKey:KEY_USER_GENDER];
+            [self.user updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                if (isSuccessful) {
+                    WEAKSELF
+                    [weakSelf.tableView reloadData];
+                }
+            }];
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+
+    
+    if (indexPath.section == 1) {
+        JJUserAuthViewController *userAuthViewController = [[JJUserAuthViewController alloc] init];
+        [self.navigationController pushViewController:userAuthViewController animated:YES];
+    }
+    if (indexPath.section == 2){
+        //退出登录
+        [BmobUser logout];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
+
+#pragma mark - UIImagePickerViewController delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.01);
+    [self uploadImageData:imageData];
+}
+
+
+
 #pragma mark - getter
 
 - (UITableView *)tableView{
@@ -150,6 +266,7 @@ static NSString *normalCellIdentifier = @"normalCell";
         [_tableView setSeparatorInset:UIEdgeInsetsZero];
         _tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
         _tableView.userInteractionEnabled = YES;
+            
     }
     return _tableView;
 }

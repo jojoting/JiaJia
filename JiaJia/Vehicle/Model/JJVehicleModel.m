@@ -10,4 +10,17 @@
 
 @implementation JJVehicleModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.time = @(0);
+        self.leftTime = @(0);
+        self.distance = @(0.00);
+        self.speed = @(0.00);
+        self.battery = 0;
+    }
+    return self;
+}
+
 @end

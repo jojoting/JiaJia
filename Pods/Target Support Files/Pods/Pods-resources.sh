@@ -60,10 +60,14 @@ install_resource()
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "AMapNavi/AMapNaviKit.framework/Versions/1.4.0.a708ac1/Resources/AMap.bundle"
   install_resource "AMapNavi/AMapNaviKit.framework/Versions/1.4.0.a708ac1/Resources/AMapNavi.bundle"
+  install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "${BUILT_PRODUCTS_DIR}/MWPhotoBrowser.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AMapNavi/AMapNaviKit.framework/Versions/1.4.0.a708ac1/Resources/AMap.bundle"
   install_resource "AMapNavi/AMapNaviKit.framework/Versions/1.4.0.a708ac1/Resources/AMapNavi.bundle"
+  install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "${BUILT_PRODUCTS_DIR}/MWPhotoBrowser.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -10,6 +10,7 @@
 
 @interface JJLocationView : UIView
 
-@property (nonatomic, copy) NSString *location;
-
+@property (nonatomic, copy) NSString    *location;
+@property (nonatomic, strong) UIImage   *image;
+@property (nonatomic, assign) BOOL      isBorderShow;
 @end

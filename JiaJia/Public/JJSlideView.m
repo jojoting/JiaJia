@@ -7,6 +7,7 @@
 //
 
 #import "JJSlideView.h"
+#import "AppDelegate.h"
 
 #define SlideAnimationDuration 0.5
 #define BackgroundViewAlpha 0.6
@@ -69,6 +70,7 @@
 
 - (void)slideWithSlideState:(JJSlideViewState )slideViewState animation:(BOOL)animation{
     self.slideViewState = slideViewState;
+    [[UIApplication sharedApplication] setStatusBarHidden:!slideViewState withAnimation:YES];
     [self setFrameWithSlideViewState:slideViewState animation:animation];
 }
 
@@ -89,6 +91,9 @@
     }else {
         self.slideView.frame = CGRectMake(-self.slideView.frame.size.width * slideViewState, self.slideView.frame.origin.y, self.slideView.frame.size.width, self.slideView.frame.size.height);
         self.backgroundView.alpha = (1-slideViewState)*BackgroundViewAlpha;
+        if (slideViewState == JJSlideViewStateSlideIn) {
+            self.hidden = slideViewState;
+        }
     }
 }
 
