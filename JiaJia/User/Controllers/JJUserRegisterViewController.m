@@ -34,12 +34,21 @@ static NSString *registerTableViewCellIdentifier = @"registerTableViewCellIdenti
     NSString *validateNumber = ((JJUserTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]]).textField.text;
     NSString *password = ((JJUserTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]]).textField.text;
     if ([phone length] != 11) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"手机号码输入不正确" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     if ([validateNumber length] == 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"验证码不能为空" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     if ([password length] < 6 || [password length] > 32) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入6-32位密码" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     

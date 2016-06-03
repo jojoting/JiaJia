@@ -43,9 +43,15 @@ static NSString *userPasswordCellIdentifier = @"userPasswordCellIdentifier";
     NSString *phone = ((JJUserTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]).textField.text;
     NSString *password = ((JJUserTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]]).textField.text;
     if ([phone length] != 11) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"手机号码输入不正确" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     if ([password length] < 6 || [password length] > 32) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码输入不正确" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         return;
     }
     
