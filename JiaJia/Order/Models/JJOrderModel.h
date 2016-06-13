@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JJOrderModel : NSObject
+@interface JJOrderModel : NSObject<NSCopying>
 
 @property (nonatomic, strong) NSNumber  *totalAmount;
 @property (nonatomic, strong) NSNumber  *totalDistance;

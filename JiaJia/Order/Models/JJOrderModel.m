@@ -14,12 +14,23 @@
 {
     self = [super init];
     if (self) {
-//        self.totalTime = @504;
-//        self.totalAmount = @(45.21);
-//        self.totalDistance = @(7.12);
-//        self.startLocation = @"华南理工大学C10";
-//        self.endLocation = @"华南理工大学A2教学楼";
+        self.totalTime = @0;
+        self.totalAmount = @0.00;
+        self.totalDistance = @0.00;
+        self.startLocation = @"";
+        self.endLocation = @"";
     }
     return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone{
+    JJOrderModel *newOrderModel = [[JJOrderModel alloc] init];
+    newOrderModel.totalTime = self.totalTime;
+    newOrderModel.totalAmount = self.totalAmount;
+    newOrderModel.totalDistance = self.totalDistance;
+    newOrderModel.startLocation = [self.startLocation copy];
+    newOrderModel.endLocation = [self.endLocation copy];
+    
+    return newOrderModel;
 }
 @end

@@ -20,8 +20,8 @@
 #define QINIU_BASE_URL      @"o70pxhznh.bkt.clouddn.com"
 
 //calculate
-#define FEE_KM(distance) (distance*2.1)
-#define FEE_TIME(time) (1.2*time/60)
+#define FEE_KM(distance) (distance*2.0)
+#define FEE_TIME(time) (0*time/60)
 #define SCREEN_FRAME ([UIScreen mainScreen].bounds)
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)

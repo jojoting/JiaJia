@@ -137,6 +137,10 @@
 
 - (void)initAnnotations
 {
+    if (self.mapView.annotations.count > 0) {
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    }
+    
     //起始点标注
     MAPointAnnotation *beginAnnotation = [[MAPointAnnotation alloc] init];
     [beginAnnotation setCoordinate:CLLocationCoordinate2DMake(self.startPoint.latitude, self.startPoint.longitude)];
@@ -185,12 +189,12 @@
         [[JJVehicleViewModel sharedViewModel] fetchVehicleDataWithIdentifier:resultStr completion:^(BOOL isSuccessful) {
             WEAKSELF
             if (isSuccessful) {
-                [SVProgressHUD dismiss];
+//                [SVProgressHUD dismiss];
                 [SVProgressHUD showSuccessWithStatus:@"成功配对E-Car"];
                 [SVProgressHUD dismissWithDelay:0.7];
                 [weakSelf startTrip];
             } else {
-                [SVProgressHUD dismiss];
+//                [SVProgressHUD dismiss];
                 [SVProgressHUD showErrorWithStatus:@"配对失败，请检查蓝牙状态"];
                 [SVProgressHUD dismissWithDelay:0.7];
             }
@@ -327,9 +331,9 @@
     JJOrderModel *orderModel = [[JJOrderModel alloc] init];
     orderModel.totalTime = [JJVehicleViewModel sharedViewModel].time;
     orderModel.totalDistance = [JJVehicleViewModel sharedViewModel].distance;
-    orderModel.totalAmount = @([orderModel.totalDistance floatValue] * 1.5);
-    orderModel.startLocation = self.startLocation.title;
-    orderModel.endLocation = self.endLocationTitle;
+    orderModel.totalAmount = @([orderModel.totalDistance floatValue] * 2);
+    orderModel.startLocation = [NSString stringWithString:self.startLocation.title];
+    orderModel.endLocation = [NSString stringWithString:self.endLocationTitle];
     JJPayViewController *payViewController = [[JJPayViewController alloc] init];
     payViewController.orderModel = orderModel;
     [self.navigationController pushViewController:payViewController animated:YES];
@@ -341,7 +345,7 @@
     self.vehicleButton.hidden = NO;
     self.tripDetailView.hidden = NO;
     self.extensionView.hidden = YES;
-    self.tripDetailView.detailTitle = self.startLocation.title;
+    self.tripDetailView.detailTitle = self.endLocationTitle;
     self.tripDetailView.detailInfo = self.extensionView.tripInfo;
 }
 

@@ -137,7 +137,7 @@
         timeString = [NSString stringWithFormat:@"%.f小时%d分钟",time/3600,(int)time % 3600];
     }
     
-    CGFloat amount = ((distance/1000)>1?(distance/1000):1) * 1.5;
+    CGFloat amount = ((distance/1000)>1?(distance/1000):1) * 2;
     self.tripInfo = [NSString stringWithFormat:@"全程%.f米，约%@，共约%.2f元",distance,timeString,amount];
     self.tripInfoLabel.text = self.tripInfo;
 }

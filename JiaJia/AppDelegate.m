@@ -79,17 +79,17 @@
     
     NSString * currentVersion = [NSBundle mainBundle].infoDictionary[key];
     
-    
-    if([currentVersion isEqualToString:lastVersion]) {
-        //加载首页
-        [self showHomeViewController:nil];
-    } else {
+//    
+//    if([currentVersion isEqualToString:lastVersion]) {
+//        //加载首页
+//        [self showHomeViewController:nil];
+////    } else {
         [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
         [[NSUserDefaults standardUserDefaults] synchronize];
         self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
         self.window.rootViewController = [[JJGuideViewController alloc]init];
         [self.window makeKeyAndVisible];
-    }
+//    }
 
     
     // Override point for customization after application launch.

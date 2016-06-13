@@ -33,11 +33,11 @@
 		B9511BAD1CC7A186005582EA /* JJUserCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BAC1CC7A186005582EA /* JJUserCenterView.m */; };
 		B9511BB01CCFCB7F005582EA /* JJHomeExtensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BAF1CCFCB7F005582EA /* JJHomeExtensionView.m */; };
 		B9511BB31CCFCC78005582EA /* JJLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9511BB21CCFCC78005582EA /* JJLocationView.m */; };
+		B9518DD61D01D66100A1337D /* JJOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9518DD51D01D66100A1337D /* JJOrderModel.m */; };
 		B96FB61A1D007E6400DCD98A /* about_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96FB6191D007E6400DCD98A /* about_photo.jpg */; };
 		B983FDF21CF453B70034ACEA /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B983FDF11CF453B70034ACEA /* UIColor+Hex.m */; };
 		B98C1F861CF820B800BFA31B /* JJPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98C1F851CF820B800BFA31B /* JJPayViewController.m */; };
 		B98C1F891CF8259700BFA31B /* JJPaySectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98C1F881CF8259700BFA31B /* JJPaySectionHeadView.m */; };
-		B98C1F901CF82A9600BFA31B /* JJOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B98C1F8F1CF82A9600BFA31B /* JJOrderModel.m */; };
 		B98C1F931CF82C4900BFA31B /* JJPayDetailAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B98C1F921CF82C4900BFA31B /* JJPayDetailAmountCell.m */; };
 		B98C1F961CF82C5800BFA31B /* JJPayTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B98C1F951CF82C5800BFA31B /* JJPayTypeCell.m */; };
 		B98C1F991CF87F5700BFA31B /* JJPaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98C1F981CF87F5700BFA31B /* JJPaySuccessViewController.m */; };
@@ -137,6 +137,8 @@
 		B9511BAF1CCFCB7F005582EA /* JJHomeExtensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJHomeExtensionView.m; sourceTree = "<group>"; };
 		B9511BB11CCFCC78005582EA /* JJLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJLocationView.h; sourceTree = "<group>"; };
 		B9511BB21CCFCC78005582EA /* JJLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJLocationView.m; sourceTree = "<group>"; };
+		B9518DD41D01D66100A1337D /* JJOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJOrderModel.h; sourceTree = "<group>"; };
+		B9518DD51D01D66100A1337D /* JJOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJOrderModel.m; sourceTree = "<group>"; };
 		B96FB6191D007E6400DCD98A /* about_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = about_photo.jpg; sourceTree = "<group>"; };
 		B983FDF01CF453B70034ACEA /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		B983FDF11CF453B70034ACEA /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
@@ -144,8 +146,6 @@
 		B98C1F851CF820B800BFA31B /* JJPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPayViewController.m; sourceTree = "<group>"; };
 		B98C1F871CF8259700BFA31B /* JJPaySectionHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPaySectionHeadView.h; sourceTree = "<group>"; };
 		B98C1F881CF8259700BFA31B /* JJPaySectionHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPaySectionHeadView.m; sourceTree = "<group>"; };
-		B98C1F8E1CF82A9600BFA31B /* JJOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJOrderModel.h; sourceTree = "<group>"; };
-		B98C1F8F1CF82A9600BFA31B /* JJOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJOrderModel.m; sourceTree = "<group>"; };
 		B98C1F911CF82C4900BFA31B /* JJPayDetailAmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPayDetailAmountCell.h; sourceTree = "<group>"; };
 		B98C1F921CF82C4900BFA31B /* JJPayDetailAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPayDetailAmountCell.m; sourceTree = "<group>"; };
 		B98C1F941CF82C5800BFA31B /* JJPayTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPayTypeCell.h; sourceTree = "<group>"; };
@@ -510,8 +510,8 @@
 		B98C1F8C1CF82A8500BFA31B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B98C1F8E1CF82A9600BFA31B /* JJOrderModel.h */,
-				B98C1F8F1CF82A9600BFA31B /* JJOrderModel.m */,
+				B9518DD41D01D66100A1337D /* JJOrderModel.h */,
+				B9518DD51D01D66100A1337D /* JJOrderModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -842,6 +842,7 @@
 				B9509B331CE21124001A778B /* JJVehicleView.m in Sources */,
 				B9509B3C1CE216D9001A778B /* JJVehicleInfoContainerView.m in Sources */,
 				B98C1FCC1CFD6EFA00BFA31B /* JJActionSheetPicker.m in Sources */,
+				B9518DD61D01D66100A1337D /* JJOrderModel.m in Sources */,
 				B98C1FC61CFA041800BFA31B /* JJUserModifyViewController.m in Sources */,
 				B9509B3F1CE3841E001A778B /* JJQiniuEngine.m in Sources */,
 				B9511BA41CBC1871005582EA /* JJBaseViewModel.m in Sources */,
@@ -852,7 +853,6 @@
 				B983FDF21CF453B70034ACEA /* UIColor+Hex.m in Sources */,
 				B9509B391CE2121C001A778B /* JJVehicleInfoView.m in Sources */,
 				B9948FF81CF6D3DA00EFE22F /* JJRegularAddressView.m in Sources */,
-				B98C1F901CF82A9600BFA31B /* JJOrderModel.m in Sources */,
 				B98C1F961CF82C5800BFA31B /* JJPayTypeCell.m in Sources */,
 				B9509B361CE2120C001A778B /* JJVehicleSpeedView.m in Sources */,
 				B98C1FAD1CF9ACCA00BFA31B /* JJOrderViewController.m in Sources */,
@@ -925,8 +925,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -948,7 +948,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "c841f246-e1a1-4689-b2c6-96f24d885ef6";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -971,8 +971,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -987,7 +987,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "c841f246-e1a1-4689-b2c6-96f24d885ef6";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

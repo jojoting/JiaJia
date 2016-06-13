@@ -10,6 +10,9 @@
 #import "JJVehicleModel.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "JJGlobal.h"
+
+#define debugBluetooth  YES
+
 @interface JJVehicleViewModel () <CBCentralManagerDelegate ,CBPeripheralDelegate>
 
 @property (nonatomic, strong) JJVehicleModel    *vehicleModel;
@@ -48,17 +51,32 @@ static JJVehicleViewModel *sharedViewModelManager = nil;
 #pragma mark - public methods
 
 - (void)fetchVehicleDataWithIdentifier:(NSString *)identifier completion:(CompletionBlock)completion{
-    self.identifier = @"9C4EF22B-E813-2CA4-FFAC-3A7BE0488ECD";
+    if (![identifier isEqualToString:@"9C4EF22B-E813-2CA4-FFAC-3A7BE0488ECD"]){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            self.completionBlock(NO);
+        });
+        return;
+    }
+    self.identifier = identifier;
     self.completionBlock = completion;
     self.manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 }
 
 - (void)cancelConnection{
+    if (debugBluetooth) {
+        [self.timer invalidate];
+        self.timer = nil;
+        return;
+    }
     [self.manager cancelPeripheralConnection:self.peripheral];
 }
 #pragma mark - private methods
 - (void)timerFire:(NSTimer *)timer{
     self.countTime += 1.0;
+    if(debugBluetooth) {
+        self.vehicleModel.time = @(self.countTime);
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_VEHICLE object:nil];
+    }
 }
 
 - (NSString *)hexStringWithData:(NSData *)data{
@@ -118,7 +136,19 @@ static JJVehicleViewModel *sharedViewModelManager = nil;
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central{
     if (central.state == CBCentralManagerStatePoweredOn) {
-        [self.manager scanForPeripheralsWithServices:nil options:nil];
+        if (debugBluetooth) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                self.completionBlock(YES);
+                [self.timer fire];
+            });
+        } else {
+            [self.manager scanForPeripheralsWithServices:nil options:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 10*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                if (!self.peripheral)
+                    self.completionBlock(NO);
+            });
+        }
+
     } else {
         self.completionBlock(NO);
     }

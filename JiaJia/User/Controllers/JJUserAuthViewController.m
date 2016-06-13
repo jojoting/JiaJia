@@ -72,7 +72,8 @@ typedef NS_ENUM(NSInteger, JJUserAuthType) {
 }
 
 - (void)confirmAction:(UIButton *)button{
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - uitableview delegate
 #pragma mark - uitableview datasource

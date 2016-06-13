@@ -52,8 +52,6 @@
     [super viewDidLoad];
     self.navigationItem.title = @"支付车费";
 
-    //debug
-    self.orderModel = [[JJOrderModel alloc] init];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.confirmPayButton];
     [self.view bringSubviewToFront:self.confirmPayButton];
@@ -126,7 +124,7 @@
             [detailAmountCell setTitle:[NSString stringWithFormat:@"里程费（%@公里）",self.orderModel.totalDistance] detail:[NSString stringWithFormat:@"%.2f元",FEE_KM([self.orderModel.totalDistance floatValue])]];
         }
         if (indexPath.row == 1) {
-            [detailAmountCell setTitle:[NSString stringWithFormat:@"时长费（%d分%d秒）",(int)([self.orderModel.totalTime integerValue] / 60),(int)([self.orderModel.totalTime integerValue] % 60)] detail:[NSString stringWithFormat:@"%.2f元",FEE_TIME([self.orderModel.totalTime integerValue])]];
+            [detailAmountCell setTitle:[NSString stringWithFormat:@"时长费（%d分%d秒）",(int)([self.orderModel.totalTime integerValue] / 60),(int)([self.orderModel.totalTime integerValue] % 60)] detail:[NSString stringWithFormat:@"%.2ld元",FEE_TIME([self.orderModel.totalTime integerValue])]];
         }
         if (indexPath.row == 2) {
             [detailAmountCell setTitle:@"优惠合计" detail:@"0.00元"];
