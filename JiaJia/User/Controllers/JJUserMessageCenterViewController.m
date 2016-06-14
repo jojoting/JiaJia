@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
+    self.navigationItem.title = @"消息中心";
+
     // Do any additional setup after loading the view.
 }
 

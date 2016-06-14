@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
+    self.navigationItem.title = @"优惠券";
+
     // Do any additional setup after loading the view.
 }
 
